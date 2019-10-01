@@ -1,0 +1,23 @@
+## NumPy array: a data structure from the NumPy array representing a fundamental package for scientific computing with Python
+
+# create a NumPy array by passing a list to array() constructor
+import numpy as np
+num_array = np.array([1,2,3,4,5])
+print(num_array)
+
+# it's iterable
+for i in num_array:
+    print(i)
+    
+#can use indexing to access elements, modify it
+num_array[3] = 40
+num_array[0:3] = [10, 20, 30]
+
+## compare to list, NumPy arrays are designed for high efficiency computations
+# NumPy arrays only store data of the same type, lists can store data of different type
+# retrieve the data type it stores 
+num_array.dtype
+
+# specify data type when creating the array
+num_array = np.array([1,2,3,4,5], dtype = np.dtype('int64'))
+num_array.dtype
