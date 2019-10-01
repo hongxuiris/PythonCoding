@@ -14,7 +14,7 @@ num_array[3] = 40
 num_array[0:3] = [10, 20, 30]
 
 ## compare to list, NumPy arrays are designed for high efficiency computations
-# NumPy arrays only store data of the same type, lists can store data of different type
+# (1) NumPy arrays only store data of the same type, lists can store data of different type
 # retrieve the data type it stores 
 num_array.dtype
 
@@ -24,5 +24,73 @@ num_array.dtype
 num_array = np.array([1,2,3,4,5], dtype = np.dtype('str'))
 print(num_array) # ['1', '2', '3', '4', '5']; dtype('<U1')
 
-# to have an array behave like a list, 'O' stands for Object
-num_array = np.array([])
+# to have an array behave like a list with respect to modification, 'O' stands for Object
+num_array = np.array([1,2,3,4,5], dtype = np.dtype('O'))
+num_array[2] = 'three'
+
+# (2) NumPy array have a special way to access their elements
+list2d = [[1,2,3,4,5], [6,7,8,10], [11,12,13, 14, 15]]
+array2d=np.array([[1,2,3,4,5], [6,7,8,10], [11,12,13, 14, 15]])
+
+# retrive 8 from list
+list2d[1][2]
+# retrive 8 from array
+array2d[1][2]
+# or
+array2d[1,2]
+
+# retrieve data block [[2,3,4], [7,8,9]] from list
+[[list2d[j][1:4] for j in range(0,2)]]
+# retrieve data block [[2,3,4], [7,8,9]] from array
+array2d[0:2, 1:4]
+
+# (3) NumPy arrays have efficient way to perform operations on them
+list1 = [1,2,3]
+list2 = [10, 20, 30]
+list1 + list2  ## [1,2,3, 10, 20, 30]
+list2 - list1 ## TypeError
+list2 * list1 ## TypeError
+list2 / list1 ## TypeError
+
+# in NumPy arrays, operations are performed element-wise
+array1 = np.array([1,2,3])
+array2 = np.array([10, 20 30])
+array1 + array2 ## array([11,22,33])
+array2 - array1 ## array([9,18,27])
+array1 * array2 ## array([10,40,90])
+array2 / array1 ## array([10,10,10])
+
+array1=np.array([[1,2,3,4,5], [6,7,8,10], [11,12,13, 14, 15]])
+array2=np.array([[10,20,30,40,50], [60,70,80,90,100], [110,120,130, 140, 150]])
+array1 + array2 ## array([[11,22,33,44,55], [66,77,88,99,110], [121,132,143, 154, 165]])
+array2 / array1 ## array([[10,10,10,10,10], [10,10,10,10,10], [10,10,10,10,10]])
+
+# conditional operations (>,<, >=, <=, ==, !=) applys to array returns a new array of booleans
+num_array=np.array([-5,-4,-3, -2, -1, 0, 1,2,3,4,5])
+num_array < 0 ## array([True, True, True, True, True, False, False, False, False, False, False])
+# use conditions to filter arrays
+num_array[num_array<0] ## array([-5,-4,-3, -2, -1])
+
+# (4) broadcasting, how operations work on arrays of different dimentions
+num_list = [1,2,3]
+num_list*3 ## [1,2,3, 1,2,3, 1,2,3]
+
+num_array = np.array([1,2,3])
+num_array*3 ## array([3,6,9])
+num_array+3 ## array([4,5,6])
+
+## broadcasting is applied to rows by default
+array2d = np.array([[1,2,3,4], [1,2,3,4], [1,2,3,4]])
+array1d = np.array([1,2,3,4])
+array2d/array1d  ## array([[1,1,1,1], [1,1,1,1], [1,1,1,1]])
+
+# to broadcast to columns, make the 1 dimentional array to be a column vector
+array2d = np.array([[1,2,3,4], [1,2,3,4], [1,2,3,4]])
+array1d = np.array([[1],[2],[3]])
+array2d/array1d  ## array([[1,2,3,4], [0.5,1,1.5,2], [0.333, 0.667,1,1.333]])
+
+
+
+
+
+
