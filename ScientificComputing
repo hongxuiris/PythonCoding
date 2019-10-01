@@ -21,3 +21,8 @@ num_array.dtype
 # specify data type when creating the array
 num_array = np.array([1,2,3,4,5], dtype = np.dtype('int64'))
 num_array.dtype
+num_array = np.array([1,2,3,4,5], dtype = np.dtype('str'))
+print(num_array) # ['1', '2', '3', '4', '5']; dtype('<U1')
+
+# to have an array behave like a list, 'O' stands for Object
+num_array = np.array([])
