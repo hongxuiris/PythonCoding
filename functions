@@ -32,4 +32,46 @@ catregory = pred(node, x):
     # returning the category
     return node.categoty
     
-## Fibonacci sequence: non-negative integers from 0 with each element 
+## Fibonacci sequence: non-negative integers from 0 with each element F(n) equals the sum of the preceding two: 0,1,1,2,3,5,8,13,21,...
+
+# function returns a tuple with the n-th element of the sequence and the number of calls to fib()
+def fib(n):
+    if n < 2:
+        return (n, 1)
+    fib1 = fib(n-1)
+    fib2 = fib(n-2)
+    return (fib1[0] + fib2[0], fib1[1]+fib2[1]+1)
+
+
+## average function iterative
+def average_iter(nums):
+    result = 0
+    for num in nums:
+        result += num
+    return result/len(nums)
+    
+## average function recursion
+def average_recur(nums):
+    # base case
+    if len(nums) == 1
+        return nums[0]
+    # recursive call 
+    n = len(nums)
+    return (nums[-1] + (n-1) * average_recur(nums[:n-1]))/n
+    
+## approximate Pi with recursion
+## Pi = 4*sum((-1)^k/(2*k+1)) = 4*(1/1 - 1/3 + 1/5 - 1/7 + 1/9 - ...)
+get_elmt = lambda k: 4*(-1)**k/(2*k+1)
+
+def calc_pi(n):
+    curr_elmt = get_elmt(n)
+    #base case
+    if n==0:
+        return 4
+    # make the recursion call
+    return curr_elmt + calc_pi(n-1)
+    
+print("approx = {}, theory = {}".format(calc_pi(500), math.pi))
+  
+
+
