@@ -1,0 +1,39 @@
+
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+####################### Chapter 1 : Data Structure and String Manipulation
+
+## chapter 1.1 Main data structure
+# Data structure: a specialized format to organize and store data.
+# main data structures in Python : list, tuple, set, dictionary
+# list: an ordered mutable sequence of items (e.g. numbers, strings and other objects)
+my_list = [1,2,3,4,5]
+print(my_list)
+print(my_list[2]) # 3 (indexing from 0)
+print(my_list[-1]) # negative index, counting workd backwards in the list
+print(my_list[1:4])  # access sub-list via slicing
+print(my_list[2:]) # not specify left/right side index results in the whole range into account
+
+# modify list
+my_list[2] = 30
+my_list[:2] = [10, 20]
+
+# methods
+my_list = [10, 20, 30, 40, 50]
+my_list_append(60) 
+print(my_list) # [10, 20, 30, 40, 50, 60]
+my_list.remove(60)
+print(my_list) # [10, 20, 30, 40, 50]
+
+# pop removes the last item from a list and returns its value
+my_list.pop() # 50 
+print(my_list) # [10, 20, 30, 40]
+#count() counts the number of a certain item in a list
+my_list.count(40)  #1
+
+# tuple
+
+
+
+# set
+# dictionary
+
