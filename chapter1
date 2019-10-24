@@ -5,6 +5,7 @@
 ## chapter 1.1 Main data structure
 # Data structure: a specialized format to organize and store data.
 # main data structures in Python : list, tuple, set, dictionary
+
 # list: an ordered mutable sequence of items (e.g. numbers, strings and other objects)
 my_list = [1,2,3,4,5]
 print(my_list)
@@ -30,10 +31,45 @@ print(my_list) # [10, 20, 30, 40]
 #count() counts the number of a certain item in a list
 my_list.count(40)  #1
 
-# tuple
+
+# tuple: an ordered immutable sequence of items (numbers, strings, etc.)
+# immutable means we can't modify it
+# create tuple by using ()
+my_tuple = (1, 'apple','2', 'banana')
+# create tuple by writting comma-seperated values
+my_tuple = 1, 'apple','2', 'banana'
+# modifying items in a tuple is not possible !!! will get TypeError
 
 
+# set: an unordered collection with no duplicate items 
+# unordered means there is no indexing for the constituent items
+my_set = set([1,2,3,4,5])
+my_set = set([1,1,1,2,3,4,5,5,5])
+print(my_set) # {1,2,3,4,5}
 
-# set
+# insert a new item to a set
+my_set1 = set([1,2,3,4,5])
+my_set2 = set([3,4,5,6,7])
+my_set1.add(6)
+print(my_set1) # {1,2,3,4,5,6}
+my_set1.remove(6)
+print(my_set1) # {1,2,3,4,5}
+
+my_set1.union(my_set2) # {1,2,3,4,5,6,7}
+my_set1.intersection(my_set2) # {3,4,5}
+my_set1.difference(my_set2) # {1,2} items in set1 but not in set2
+
+
 # dictionary
+
+
+
+
+
+
+
+
+
+
+
 
