@@ -60,7 +60,40 @@ my_set1.intersection(my_set2) # {3,4,5}
 my_set1.difference(my_set2) # {1,2} items in set1 but not in set2
 
 
-# dictionary: a collection of key value pairs where keys are unique and immutalbe
+# dictionary: a collection of key value pairs where keys are unique and immutalbe 
+# dictionary is unordered
+# create dictionary with curly bracckets
+fruits = {'apple':10, 'orange':6, 'banana': 9}
+
+# dict() constructor with a list of tuples
+fruits = dict([('apple', 1), ('orange',6), ('banana',9)])
+
+# access by specifying the key
+fruits['apple']
+
+# raise KeyError is the key does not exist
+fruits['grape'] # KeyError
+
+# modifying values
+fruits['apple'] = 20
+# if key does not exist, the opporation creates a key-value pair
+fruits['grape'] = 11
+
+# methods
+# items() # return key-value pairs
+list(fruits.items()) # [('apple', 10), ('orange',6), ('banana',9)]
+list(fruits.keys()) # ['apple', 'orange', 'banana']
+list(fruits.values()) #[10,6,9]
+
+# remove the last inserted key-value pair with the popitem() method
+fruits.popitem('banana') # 9 returns the associated value
+
+# operations on list, tuple, set and dictionary
+len()
+# in
+2 in my_list/my_tuple/my_set/my_dict
+
+
 
 
 
