@@ -60,7 +60,7 @@ my_set1.intersection(my_set2) # {3,4,5}
 my_set1.difference(my_set2) # {1,2} items in set1 but not in set2
 
 
-# dictionary
+# dictionary: a collection of key value pairs where keys are unique and immutalbe
 
 
 
