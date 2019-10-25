@@ -116,6 +116,32 @@ while len(basket1) > len(basket2):
 # (A∪(B∩C))−(D∩E)
 # A.union(B.intersection(C)).difference(D.intersection(E))
 
+# Is it possible to use a list instead of a tuple for a key in the circ_parab dictionary?
+# No, because a list is mutable and the operation will result in TypeError.
+circ_parab = dict()
+
+for x in range_x:
+    for y in range_y:        
+        # Calculate the value for z
+        z = x**2 + y**2
+        # Create a new key for the dictionary
+        key = (x,y)
+        # Create a new key-value pair      
+        circ_parab[key] = z
+
+
+## chapter 1.2 common ways to manipulate strings
+
+
+
+
+
+
+
+
+
+
+
 
 
 
