@@ -131,6 +131,82 @@ for x in range_x:
 
 
 ## chapter 1.2 common ways to manipulate strings
+# string
+s= 'hello'
+s= "hello"
+s = str("hello")
+str(11.5)    # '11.5'
+str([1,2,3]) # '[1,2,3]'
+
+class NewClass:
+    def __init__(self, num):
+        self.num = num
+    def __str__(self):
+        return str(self.num)
+        
+nc = NewClass(2)
+print(nc.num) #2
+str(nc) # '2'
+
+# accessing characters in a string
+s = 'interview'
+s[1] # 'n'
+s[-2] # 'e'
+s[1:4] # 'nte'
+s[2:] #'terview'
+s[:3] #'int'
+
+# to retrieve an index of a specific character in a string: .index() method
+s = 'interview'
+s.index('n') # 1
+s.index('i') # 0 if the character present more than once, only the lowest index is returned
+
+# strings are immutable, you can't modify an existing string
+s[0] = 'a'  # TypeError
+
+# string methods
+# string concatenation
+s1='worm'
+s2 = s1+'hole'
+print(s2) # wormhole
+
+# .replace(): it substitutes all the occurances of a specific character sequence in a string with another sequence
+s1 = 'a dog ate my food'
+s2 = s1.replace('dog', 'cat')
+print(s2) # a cat ate my food
+
+s3 = s2.upper() # A CAT ATE MY FOOD
+s4 = s3.lower() # a cat ate my food
+
+#.capitalize(): capitalize only the first letter in a string
+s5 = s4.capitalize() # A cat ate my food
+
+# relation to lists
+# create a string from a list of strings
+ l = ['I', 'like', 'to', 'study']
+s = ' '.join(l)
+print(s) # I like to study
+
+# breaking string into a list of strings
+l = s.split(' ')  # ['I', 'like', 'to', 'study']
+
+# string methods with DataFrames
+# create a DataFrame using a custom dictionary
+import pandas as pd
+d = {'name' : ['john', 'amanda', 'rick'], 'age': [35, 29, 19]}
+D = pd.DataFrame(d)
+print(D)
+
+D['name'] = D['name'].str.capitalize()
+
+###############  exercise   ##########
+
+
+
+
+
+
+
 
 
 
