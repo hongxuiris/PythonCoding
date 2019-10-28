@@ -200,17 +200,43 @@ print(D)
 D['name'] = D['name'].str.capitalize()
 
 ###############  exercise   ##########
+# String indexing and concatenation
+# encryption techniques - Caesar cipher: It is based on a simple shift of each letter in a message by a certain number of positions 
+# down the given alphabet. For example, given the English alphabet, a shift of 1 for 'xyz' would imply 'yza'
+
+def encrypt(text, key):
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    result = ''
+    for c in text.lower():
+        idx = (alphabet.index(c) + key) % len(alphabet)
+        result = result + alphabet[idx]
+    return result
+
+# What would be the corresponding change in the decrypt() function?
+#  It is enough to only subtract since Python allows negative indexing.
+idx = alphabet.index(char) - key
 
 
+### Operations on strings
+text = 'StRing ObJeCts haVe mANy inTEResting pROPerTies'
+# Your task is to modify this string in such a way that would result in 'string OBJECTS have MANY interesting PROPERTIES' 
+# (every other word in text is uppercased and lowercased, otherwise).
 
+word_list = text.split()
 
+# Make every other word uppercased; otherwise - lowercased
+for i in range(len(word_list)):
+    if (i + 1) % 2 == 0:
+        word_list[i] = word_list[i].upper()
+    else:
+        word_list[i] = word_list[i].lower()
+        
+# Join the words back and form a new string
+new_text = ' '.join(word_list)
+print(new_text)
 
-
-
-
-
-
-
+#### Fixing string errors in a DataFrame
+# the heroes dataset containing the information on different comic book heroes.
 
 
 
