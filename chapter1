@@ -367,18 +367,38 @@ while True:
         
 # many iterables are actually iterators
 # we can apply both iter() function and next() function 
+# examples : enumerate, finditer
 
+# iterables that are iterators normally can be traversed only once. looping over the same object agaibn is not possible
+# can't apply the next() function to pure iterables (iterables that are not iterators, like list)
 
+## traversing a DataFrame
+pars = {'weight': [168, 183, 198], 'height': [77, 79, 135]}
+characters = pd.DataFrame(pars, index=['Luke Skywalker', 'Han Solo', 'Darth Vader'])
+print(characters)
 
+for item in characters:
+    print(item)     # each column represent a column name
 
+############### loop through each row
+result = characters.iterrows()
+for item in result:
+    print(item)
+# item : (index name, Series). each item is a tuple consists of a row index name and a data series with all the information in that row
+# or unwrap the tuple
+for index, series in result:
+    print(index)
+    print(series)
 
-
-
-
-
-
-
-
+############### loop through each column
+result = characters.iteritems()
+for item in result:
+    print(item)
+# item : (column name, series). each item is a tuple containing a column name and a data series with all the information in that column
+# unwrap
+for name, series in result:
+    print(name)
+    print(series)
 
 
 
