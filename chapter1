@@ -319,3 +319,105 @@ print(re.findall(alt_pattern, text))
 # When given a task on regular expressions, there might be many ways to solve it. It is always better to think on the easiest one!
 
 
+
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+####################### Chapter 2 : iterable objects and representatives
+
+## chapter 2.1 what are iterable objects?
+# iterable objects/iterables - any object that can be used in a for loop (meaning it stores an element sequence)
+# iterables: list, tuple, set, dictionary, string
+
+# set items are retrieved disordered compared to how we inserted them
+battleships = {'X-Wing fighter', 'Millennium Falcon', 'TIE Fighter'}
+for battleship in battleships: 
+    print(battleship)             # 'TIE Fighter', 'X-Wing fighter', 'Millennium Falcon'
+    
+# iterating through a dictionary get the keys but not the values
+# to get key-value pairs, use .items() method
+for item in d.items():
+for k, v in d.items():
+
+# less visual objects: range
+for i in range(10):
+
+# less visual objects: enumerate
+for idx, name in enumerate(a_list):
+    print(str(idx) + ' - ' + name)
+    
+# iterables can be passed to list(), tuple(), set() constructors
+list(enumerate(a_list)) ##  returns a list of tuples
+
+# how to know if we deal with an iterable? apply iter() function, it returns a iterator object for iterables 
+# iterator - an object knowing how to retrieve consecutive elements from an iterable one by one
+# use next() function, call it until StopIteration error is raised
+next(interval_iter)
+
+# describing a for loop 
+for c in lst:
+    print(c)
+    
+# how it works
+iter_lst = iter(lst)
+while True: 
+    try:
+        c = next(iter_lst)
+        print(c)
+    except StopIteration:
+        break
+        
+# many iterables are actually iterators
+# we can apply both iter() function and next() function 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
