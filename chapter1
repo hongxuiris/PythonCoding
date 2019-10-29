@@ -401,25 +401,51 @@ for name, series in result:
     print(series)
 
 
+###############  ***********  exercise  ********************** ##########
+def retrieve_character_indices(string):
+    character_indices = dict()
+    for idx, s in enumerate(string)
+        if s in character_indices:
+            character_indices[s].append(idx
+        else:
+            character_indices[s] = [idx] # can't use list(idx) because idx is not iterable
+    return character_indices
 
 
+# iterators
+# all Iterables like list, set, or dict must have the associated Iterator. You are given the dictionary pets
+# first create an iterator from the pure iterables then use next
 
+iter_pets = iter(pets)
+next(iter_pets)
+next(iter_pets)
+list(iter_pets) # the first and second elements excluded because has applied next() twice already
+next(iter_pets) # StopIteration error is raised, because all elements in the iterator have been consumed
 
+## Traversing a DataFrame
+# heroes DataFrame ontains only categorical data and no missing values. You have to create the following dictionary from this dataset:
+# Each key is a column name.
+# Each value is another dictionary:
+#     Each key is a unique category from the column.
+#     Each value is the amount of heroes falling into this category.
 
-
-
+for column_name, series in heroes.iteritems():
+    # Retrieve the values stored in series in a list form
+    values = list(series)
+    category_counts = dict()  
+    # Traverse through unique categories in values
+    for category in set(values):
+        # Count the appearance of category in values
+        category_counts[category] = values.count(category)
     
+    column_counts[column_name] = category_counts
     
+print(column_counts)
 
 
 
 
-
-
-
-
-
-
+## chapter 2.2 list comprehension
 
 
 
