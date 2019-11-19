@@ -10,7 +10,7 @@
 my_list = [1,2,3,4,5]
 print(my_list)
 print(my_list[2]) # 3 (indexing from 0)
-print(my_list[-1]) # negative index, counting workd backwards in the list
+print(my_list[-1]) # negative index, counting worked backwards in the list
 print(my_list[1:4])  # access sub-list via slicing
 print(my_list[2:]) # not specify left/right side index results in the whole range into account
 
@@ -20,7 +20,7 @@ my_list[:2] = [10, 20]
 
 # methods
 my_list = [10, 20, 30, 40, 50]
-my_list_append(60) 
+my_list.append(60) 
 print(my_list) # [10, 20, 30, 40, 50, 60]
 my_list.remove(60)
 print(my_list) # [10, 20, 30, 40, 50]
